@@ -29,5 +29,15 @@ namespace RolePlayingGame.Controllers
         }
 
 
+        [HttpPost]
+        public IActionResult AddCharacter(Character newCharacter){
+            characters.Add(newCharacter);
+            return Ok(characters);
+        }
+
+         
+
+
+
     }
 }
