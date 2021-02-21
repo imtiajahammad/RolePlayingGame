@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using RolePlayingGame.Molels;
+using RolePlayingGame.Models;
 
 namespace RolePlayingGame.Services
 {

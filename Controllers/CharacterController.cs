@@ -1,8 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using RolePlayingGame.Molels;
+using RolePlayingGame.Models;
 using RolePlayingGame.Services;
 
 namespace RolePlayingGame.Controllers

@@ -1,4 +1,4 @@
-namespace RolePlayingGame.Molels
+namespace RolePlayingGame.Models
 {
     public class Character
     {
