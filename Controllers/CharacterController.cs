@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RolePlayingGame.Models;
 using RolePlayingGame.Services;
+using RolePlayingGame.ViewModels.Character;
 
 namespace RolePlayingGame.Controllers
 {
@@ -34,12 +35,29 @@ namespace RolePlayingGame.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddCharacter(Character newCharacter){            
+        public async Task<IActionResult> AddCharacter(AddCharacterViewModel newCharacter){            
             return Ok(await _characterService.AddCharacter(newCharacter));
         }
 
-         
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateCharacter(UpdateCharacterViewModel updateCharacterViewModel){
+            ServiceResponse<GetCharacterViewModel> response=await _characterService.UpdateCharacter(updateCharacterViewModel);
+            if(response.Data==null){
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
+
+         
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id){
+            ServiceResponse<List<GetCharacterViewModel>> response=await _characterService.DeleteCharacter(id);
+            if(response.Data==null){
+                return NotFound(response);
+            }
+            return Ok(response);
+        }
 
 
     }
